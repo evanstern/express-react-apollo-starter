@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-
 `;
 
 const App: React.FC = () => {
