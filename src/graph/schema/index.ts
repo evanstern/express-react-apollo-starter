@@ -4,6 +4,7 @@ export const typeDefs = gql`
   scalar Date
 
   type Item {
+    _id: ID!
     name: String!
     description: String!
     isCompleted: Boolean!

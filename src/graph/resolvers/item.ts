@@ -13,7 +13,10 @@ export const Query = {
 
 export const Mutation = {
   addItem: async (_, { item }: { item: IItemInput }): Promise<IItem> => {
-    const newItem = new Item(item);
+    const newItem = new Item({
+      ...item,
+      isCompleted: false,
+    });
     await newItem.save();
     return newItem;
   },

@@ -1,9 +1,12 @@
 import React from 'react';
+
+import { ApolloProvider } from '@apollo/react-hooks';
 import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
 import { Header } from './components/Header';
 import { Routes } from './Routes';
+import { apolloClient } from './utils/apolloClient';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -14,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
 const App: React.FC = () => {
   return (
-    <>
+    <ApolloProvider client={apolloClient}>
       <GlobalStyle />{' '}
       <BrowserRouter>
         {' '}
@@ -23,7 +26,7 @@ const App: React.FC = () => {
           <Routes />
         </div>
       </BrowserRouter>
-    </>
+    </ApolloProvider>
   );
 };
 

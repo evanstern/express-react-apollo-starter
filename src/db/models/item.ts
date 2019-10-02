@@ -6,11 +6,16 @@ export const ItemSchema: Schema = new Schema(
   {
     name: {
       type: String,
-      require: true,
+      required: true,
     },
     description: {
       type: String,
-      require: true,
+      required: true,
+    },
+    isCompleted: {
+      type: Boolean,
+      required: true,
+      default: false,
     },
   },
   {
